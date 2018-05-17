@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.stxr.fightwork.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <com.stxr.fightwork.view.CountingDownClock
+        android:id="@+id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:text="00:00:12" />
+
+    <LinearLayout
+        android:id="@+id/ll_time_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fab"
+        app:layout_goneMarginTop="16dp">
+
+        <TextView
+            android:onClick="timeSelect"
+            android:id="@+id/tv_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="5分钟"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="16sp" />
+
+        <TextView
+            android:onClick="timeSelect"
+            android:id="@+id/tv_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="10分钟"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="16sp" />
+
+        <TextView
+            android:onClick="timeSelect"
+            android:id="@+id/tv_15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="15分钟"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="16sp" />
+
+        <TextView
+            android:onClick="timeSelect"
+            android:id="@+id/tv_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="30分钟"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="16sp" />
+
+        <TextView
+            android:onClick="timeSelect"
+            android:id="@+id/tv_60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="60分钟"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

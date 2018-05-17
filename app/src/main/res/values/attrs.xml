@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CountingDownClock">
+        <attr name="circle_color" format="color" />
+        <attr name="text_color" format="color" />
+        <attr name="start_time" format="integer"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+</resources>
