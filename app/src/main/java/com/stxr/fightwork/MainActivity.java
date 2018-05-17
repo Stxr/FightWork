@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
     public void onFinish() {
         mLl.setVisibility(View.VISIBLE);
         mFab.setVisibility(View.GONE);
+        mFab.setImageResource(R.drawable.ic_action_start);
         clock.setProgress(100);
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
     }
 
     public void timeSelect(View view) {
+        mPause = true;
         int id = view.getId();
         if (countDownTimer != null) {
             countDownTimer.cancel();

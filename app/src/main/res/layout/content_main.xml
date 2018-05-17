@@ -12,8 +12,7 @@
     <com.stxr.fightwork.view.CountingDownClock
         android:id="@+id/clock"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:text="00:00:12" />
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/ll_time_select"
