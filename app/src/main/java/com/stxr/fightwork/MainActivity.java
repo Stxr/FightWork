@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
     private MyCountDownTimer countDownTimer;
     private boolean mPause = true;
     private LinearLayout mLl;
+    private FloatingActionButton mFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +35,21 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
 
         mLl = findViewById(R.id.ll_time_select);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-        final FloatingActionButton fab = findViewById(R.id.fab);
+        mFab = findViewById(R.id.fab);
         clock = findViewById(R.id.clock);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mFab.setVisibility(View.GONE);
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mPause) {
                     countDownTimer.start();
                     mLl.setVisibility(View.GONE);
                     mPause = false;
-                    fab.setImageResource(R.drawable.ic_action_pause);
+                    mFab.setImageResource(R.drawable.ic_action_pause);
                 } else {
                     mLl.setVisibility(View.VISIBLE);
                     countDownTimer.pause();
-                    fab.setImageResource(R.drawable.ic_action_start);
+                    mFab.setImageResource(R.drawable.ic_action_start);
                     mPause = true;
                 }
             }
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
     @Override
     public void onFinish() {
         mLl.setVisibility(View.VISIBLE);
+        mFab.setVisibility(View.GONE);
         clock.setProgress(100);
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,
@@ -113,7 +116,13 @@ public class MainActivity extends AppCompatActivity implements MyCountDownTimer.
             startTime = 60 * 1000 * 60;
             clock.setTime(0, 60, 0);
         }
+        mFab.setVisibility(View.VISIBLE);
         countDownTimer = new MyCountDownTimer(startTime, 1000);
         countDownTimer.setOnCountingDownCallBack(MainActivity.this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }

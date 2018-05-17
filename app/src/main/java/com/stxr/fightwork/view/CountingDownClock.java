@@ -65,8 +65,8 @@ public class CountingDownClock extends View {
         mPaintText.setAntiAlias(true);//抗锯齿
         mPaintCircle.setStyle(Paint.Style.STROKE);
         mPaintCircle.setAntiAlias(true); //抗锯齿
-        setProgress(50);
-        setTime(0, 0, 60);
+        setProgress(100);
+        setTime(0, 0, 0);
     }
 
     public void setTime(int hour, int minutes, int second) {
